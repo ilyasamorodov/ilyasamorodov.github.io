@@ -6,102 +6,70 @@
 		<meta name="description" content="Классическая игра Камень-Ножницы-Бумага на HTML5"/>
 		<meta name="keywords" content="игра, камень, ножницы, бумага, html5, развратные, школьницы, javascript, домашнее, задание"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<title>Игра &laquo;Камень-Ножницы-Бумага-Ящерица-Спок&raquo;</title>
-		
-		<style type="text/css">
-		* {margin:0px;padding:0px;font-family: "Segoe UI Light", Helvetica;font-weight:100;color:#fff;}
-		body {background:#38abdb;}
-		
-		#game h1, h3 {font-size:2.2em;}
-		#game h3 {font-size: 1.4em;}
-		
-		#game ul {list-style-type: none;text-align:center;}
-		#game ul li {display: inline-block;}
-		
-		#game {width: 730px; margin: 0 auto;}
-		#game #buttons ul li {width: 120px;height:120px;}
-		#game .result>div, #game .result> .message {height: 120px;width:120px;margin: 0 auto;font-size:5em;text-align:center;}
-		#game .result> .message {width: 730px;}
-		
-		#game .rock {background: #fff url("img/icon-rock.png") no-repeat;background-size: cover;}
-		#game .rock:hover {background: #464637 url("img/icon-rock.png") no-repeat;background-size: cover;}
-		#game .scissors {background: #fff url("img/icon-scissors.png") no-repeat;background-size: cover;}
-		#game .scissors:hover {background: #CCCCCC url("img/icon-scissors.png") no-repeat;background-size: cover;}
-		#game .paper {background: #fff url("img/icon-paper.png") no-repeat;background-size: cover;}
-		#game .paper:hover {background: #FFEFBF url("img/icon-paper.png") no-repeat;background-size: cover;}
-		#game .lizard {background: #fff url("img/icon-lizard.png") no-repeat;background-size: cover;}
-		#game .lizard:hover {background:#00B300 url("img/icon-lizard.png") no-repeat;background-size: cover;}
-		#game .spock {background: #fff url("img/icon-spock.png") no-repeat;background-size: cover;}
-		#game .spock:hover {background: #2693FF url("img/icon-spock.png") no-repeat;background-size: cover;}
-		
-		#game .unknown {background: #fff url("img/icon-unknown.png") no-repeat;background-size: cover;}
-		</style>
+		<title>HTML5+JS Эксперименты</title>		
+		<link rel="stylesheet" href="desktop.css" />
+		<script type="text/javascript" src="game-logic.js" async></script>
 	</head>
-	<body>
-		<div id="game">
-			<h1>Камень-Ножницы-Бумага-Ящерица-Спок </h1>
+	<body class="neutral-scheme">
+		
+		<div class="leftpane"><a href="#header"></a></div>
+		
+		<div class="header" id="header">
+			<h1 class="text2">HTML5+JS Эксперименты</h1>
+		</div>
+		
+		<div class="topnav">
+			<ul>
+				<li><a href="#contacts">Контакты</a></li>
+				<li><a href="#game">Игра</a></li>
+				<li><a href="#magic">Magic</a></li>
+				<li><a href="#map">Карта</a></li>
+			</ul>
+		</div>
+		
+		<div class="block" id="contacts">			
+			<h2 class="dark-text">Контакты</h2>
+			<p>&mdash; <a href="http://github.com/ilyasamorodov">github/ilyasamorodov</a></p>
+			<p>&mdash; <a href="mailto://ilyasamorodov@gmail.com?subject=Илья, хочу дать тебе денег">ilyasamorodov@gmail.com</a></p>
+			<p>&mdash; <a href="http://vk.com/lassard">ВКонтакте</a></p>
+		</div>
+		
+		<div class="game color2" id="game">
+			<h2>Игра</h2>
+			<h4>&laquo;Камень-Ножницы-Бумага-Ящерица-Спок&raquo;</h4>
 			
-			<h3>Выбор пользователя</h3>
-			<div id="buttons">
+			<div class="user">			
 				<ul>
-					<li class="rock"  data-choice="rock"></li>
-					<li class="scissors" data-choice="scissors"></li>
-					<li class="paper" data-choice="paper"></li>
-					
-					<li class="lizard" data-choice="lizard"></li>
-					<li class="spock" data-choice="spock"></li>
+					<li class="u"></li>
+					<li class="rock"  data-choice="rock"><label>Камень</label></li>
+					<li class="scissors" data-choice="scissors"><label>Ножницы</label></li>
+					<li class="paper" data-choice="paper"><label>Бумага</label></li>					
+					<li class="lizard" data-choice="lizard"><label>Ящерица</label></li>
+					<li class="spock" data-choice="spock"><label>Спок</label></li>
 				</ul>
 			</div>
 			
-			<h3>Выбор компьютера</h3>
-			<div class="result">
-				<div class="unknown" name="computerChoice"></div>				
+			<div class="computer">
+				<ul>
+					<li class="c"></li>
+					<li class="unknown" name="computerChoice"></li>
+				</ul>				
 			</div>
 			
-			<h3>Результат</h3>
 			<div class="result">
 				<div class="message" name="gameResult"></div>	
 			</div>
-			
-			<script type="text/javascript">
-				var choices = ["rock", "paper", "scissors", "lizard", "spock"];
-				var results = ["Поражение", "Победа", "Ничья"];
-				var rules = {
-					"rock" : {"scissors" : 1, "paper" : 0, "lizard" : 1, "spock" : 0},
-					"scissors" : {"paper" : 1, "rock" : 0, "lizard" : 1, "spock" : 0},
-					"paper" : {"rock" : 1, "scissors" : 0, "lizard" : 0, "spock" : 1},
-					"lizard" : {"rock" : 0, "scissors" : 0, "paper" : 1, "spock" : 1},
-					"spock" : {"rock" : 1, "scissors" : 1, "paper" : 0, "lizard" : 0}
-				};											
-				
-				var buttons = document.querySelector("#buttons");
-				buttons.addEventListener("click", function(e){
-					var humanChoice = e.target.dataset.choice;
-					var computerChoice = getComputerChoice();					
-					document.querySelector("[name='computerChoice']").className = computerChoice;
-					
-					var gameResult = getWinner(humanChoice, computerChoice);					
-					document.querySelector("[name='gameResult']").innerText = results[gameResult];
-				});
-				
-				function getWinner(hChoice, cChoice){
-					if (hChoice == cChoice) 
-						return 2;
-					else
-						return rules[hChoice][cChoice];
-				}				
-				
-				function getComputerChoice(){
-					var choiceIndex = getRandomNumber(0,choices.length-1);
-					return choices[choiceIndex];
-				}
-				
-				function getRandomNumber(min, max){
-					return Math.floor(Math.random() * (max - min + 1)) + min;
-				}
-				
-				
-			</script>
-		</div>		
+		</div>
+		
+		<div class="block blue" id="magic">
+			<h2>Magic</h2>
+			<h3>Sorry, magic not implemented yet.</h3>
+		</div>
+		
+		<div class="block" id="map">
+			<h2 class="dark-text">Карта</h2>
+			<h3 class="dark-text">В процессе&hellip;</h3>
+		</div>
+		
 	</body>
 </html>
