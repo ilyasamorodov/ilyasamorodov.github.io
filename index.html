@@ -38,12 +38,32 @@
 	<!-- Primary Page Layout
 	================================================== -->
 
+  <!-- Modal layer
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div id="modal" class="modal-overlay">
+
+    <!--<div class="modal-content">
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>-->
+    <div class="container">
+      <div class="row">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <h4 class="section-heading" id="modal-title">Заголовок</h4>
+        <p id="modal-description">Текст описания</p>
+        <img src="#" alt="&nbsp;" id="modal-image" class="modal-image">
+      </div>
+    </div>
+  </div>
+
 	<!-- top flyin menu -->
   <div class="section menu">
 			<ul id="menu" class="menu">
-	        <li><a href="#works">Портфолио</a></li>
-	        <li><a href="#unique-chance">Уникальное предложение</a></li>
-	        <li><a href="#contacts">Контакты</a></li>
+	        <li><a href="#works" class="works-link">Портфолио</a></li>
+	        <li><a href="#unique-chance" class="unique-chance-link">Уникальное предложение</a></li>
+	        <li><a href="#contacts" class="contacts-link">Контакты</a></li>
 	    </ul>
   </div>
 
@@ -77,13 +97,13 @@
         <p>Разбираться в чужом коде (такое часто любят спрашивать, поэтому отвечу сразу, что умею).</p>
         <p>Умею <span class="blue">HTML</span>+<span class="blue">CSS</span>+<span class="blue">JS</span>. Имею представление о фреймворках:
            <span class="blue">jQuery</span>; <span class="blue">Bootstrap</span>, <span class="blue">Foundation</span>, <span class="blue">UIKit</span>; <span class="blue">Angular</span>, <span class="blue">React</span>. </p>
-           <p>Знаю о системах автоматизации типа <span class="blue">Gulp</span> и <span class="blue">Webpack</span>,
+           <p>Знаю о системах автоматизации типа <span class="blue">Gulp</span> и <span class="blue">Grunt</span>,
            препроцессорах CSS (<span class="blue">Sass</span> и <span class="blue">LESS</span>) и HTML (<span class="blue">Jade</span>). Соответственно,
            знаю что такое <span class="blue">npm</span> и <span class="blue">bower</span>.</p>
         <p>Из backend’а имею базовые знания в <span class="green">PHP</span>, <span class="green">NodeJS</span>, <span class="green">ASP.NET</span>.</p>
         <p>Могу писать простые запросы на <span class="green">(T)SQL</span> для <span class="green">MySQL</span>, <span class="green">MSSQL</span>
            или <span class="green">SQLite</span>.</p>
-        <p>Имею некоторый опыт в&nbsp;написании <a href="#">руководств</a> и&nbsp;<a href="#">документаций</a>.</p>
+        <p>Имею некоторый опыт в&nbsp;написании <a href="docs/printserver_instructions.zip">руководств</a> и&nbsp;<a href="docs/servicephone_guide.zip">документаций</a>.</p>
 			</div>
     </div>
   </div>
@@ -115,7 +135,7 @@
            в имеющиеся по вашему ТЗ.</p>
         <p>Также могу поддержать своей кандидатурой вашу команду
            разработчиков. Предложение можно оговорить,
-           <a href="#">связавшись&nbsp;со&nbsp;мной</a> удобным для вас способом.</p>
+           <a href="#contacts" class="contacts-link">связавшись&nbsp;со&nbsp;мной</a> удобным для вас способом.</p>
 			</div>
     </div>
 	</div>
@@ -126,7 +146,7 @@
 			<h2 class="section-heading">Мои работы</h2>
 	    <h3 class="section-subheading">Веб-разработка</h3>
 			<div class="row">
-				<div class="one-third column"><a href="#"><img src="/images/web/iskraburo.png" alt=""></a></div>
+				<div class="one-third column"><a href="#"><img src="/images/web/iskraburo.png" alt="" data-title="Искра бюро" data-description="Коммуникационное бюро"></a></div>
 				<div class="one-third column"><a href="#"><img src="/images/web/tkforsazh.png" alt=""></a></div>
 				<div class="one-third column"><a href="#"><img src="/images/web/dayofhappiness.png" alt=""></a></div>
       </div>
@@ -179,7 +199,7 @@
     <div class="container">
 			<div class="row">
 				<span class="message">Спешите! До окончания акции осталось немного времени</span>
-	      <span class="time">20:22:17</span>
+	      <span class="time timer-container">20:22:17</span>
 	      <a href="#">Скачать резюме и портфолио</a>
 			</div>
 		</div>
@@ -208,6 +228,10 @@
 		</div>
 	</div>
 
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="js/timer.js" charset="utf-8"></script>
+  <script src="js/custom.js" charset="utf-8"></script>
 <!-- End Document
 ================================================== -->
 </body>

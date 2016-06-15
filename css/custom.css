@@ -262,6 +262,56 @@ figure > img {
   left: 0px;
 }
 
+/* modal */
+.modal-overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    /*background-color: rgb(250,250,250);
+    background-color: rgba(250,250,250, 1);*/
+    background-color: #efefef;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: 0.5s;
+}
+
+.modal-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.modal-image {
+  width: 100%;
+}
+
+.modal-overlay a {
+    padding: 8px;
+    text-decoration: none;
+    text-align: right;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.modal-overlay a:hover, .modal-overlay a:focus {
+    color: #000;
+}
+
+.closebtn {
+    /*position: absolute;
+    top: 20px;
+    right: 45px;*/
+    font-size: 60px !important;
+}
+
+/* for narrow screens */
 @media (max-width: 470px) {
   .section.menu .menu li {
     display: block;
