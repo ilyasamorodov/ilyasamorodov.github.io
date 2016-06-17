@@ -10,13 +10,13 @@ var title = document.getElementById('modal-title');
 var image = document.getElementById('modal-image');
 var description = document.getElementById('modal-description');
 
-works.onclick = function(event) {  
+works.onclick = function(event) {
   if (event.target.nodeName != 'IMG') return;
 
   var workObject = event.target;
 
   title.innerHTML = workObject.getAttribute('data-title');
-  image.src = workObject.getAttribute('src');
+  image.src = workObject.getAttribute('data-image');
   image.alt = workObject.getAttribute('data-title');
   description.innerHTML = workObject.getAttribute('data-description');
 
