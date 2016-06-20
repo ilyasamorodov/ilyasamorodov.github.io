@@ -2,6 +2,8 @@
   console.log('timer ready');
 
   var timerContainer = document.querySelector('.timer-container');
+  var rowTimer = document.querySelector('.row-timer');
+  var rowMessage = document.querySelector('.row-message');
 
   function getTimeRemaining(endtime){
     var t = Date.parse(endtime) - Date.parse(new Date());
@@ -21,19 +23,21 @@
   setInterval(function() {
     var today = new Date();
 
-    if (today.getHours() > 11 && today.getHours() < 21)
+    if (today.getHours() > 8 && today.getHours() < 21)
     {
+      rowMessage.style.display = 'none';
       today.setHours(21, 00, 00);
       var rest = getTimeRemaining(today);
 
       rest.hours = (rest.hours < 10) ? '0' + rest.hours : rest.hours;
       rest.minutes = (rest.minutes < 10) ? '0' + rest.minutes : rest.minutes;
       rest.seconds = (rest.seconds < 10) ? '0' + rest.seconds : rest.seconds;
-
+      console.log(rest.minutes);
       timerContainer.innerHTML = rest.hours + ':' + rest.minutes + ':' + rest.seconds;
     }
     else {
-      timerContainer.innerHTML = 'Завтра вам точно повезёт!';
+      rowTimer.style.display = 'none';
+      rowMessage.style.display = 'block';
     }
 
   }, 1000);

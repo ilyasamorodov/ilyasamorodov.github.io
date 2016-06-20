@@ -27,15 +27,15 @@
   color: #979797;
 }
 
-/* backgrounds*/
-.section.menu {background-image: url('/images/menu-bg.png'); background-size: cover; background-position: center center;}
-.section.header {background-image: url('/images/header-bg.jpg'); background-size: cover; background-position: center center;}
+/* backgrounds */
+.section.menu {background-image: url('/images/backgrounds/menu-bg.png'); background-size: cover; background-position: center center;}
+.section.header {background-image: url('/images/backgrounds/header-bg.jpg'); background-size: cover; background-position: center center;}
 .section.about {background: inherit;}
 .section.skillz,
 .section.why {background: #f3f3f3;}
 .section.works {background: transparent;}
-.section.unique-chance {background-image: url('/images/contacts-bg.jpg'); background-size: cover; background-position: center center;}
-.section.contacts {background-image: url('/images/contacts-bg.jpg'); background-size: cover; background-position: center center;}
+.section.unique-chance {background-image: url('/images/backgrounds/chance-bg.jpg'); background-size: cover; background-position: center center;}
+.section.contacts {background-image: url('/images/backgrounds/contacts-bg.jpg'); background-size: cover; background-position: center center;}
 
 /* heights */
 .section {
@@ -87,6 +87,10 @@
   font-weight: bold;
   font-style: italic;
 }
+.section.timer span.small {
+  font-size: 100%;
+}
+
 .section.timer span.time {
   color: #666;
   font-size: 380%;
@@ -96,7 +100,7 @@
 .section.timer a {
   display: inline-block;
   border: 1px solid #d7dfee;
-  background-image: url('/images/menu-bg.png');
+  background-image: url('/images/backgrounds/menu-bg.png');
   background-position: center center;
   background-size: cover;
   margin-top: 2rem;
@@ -104,6 +108,10 @@
   font-size: 110%;
   font-weight: bold;
   font-style: italic;
+}
+
+.hidden{
+  display: none;
 }
 
 .section.works img {
@@ -336,6 +344,7 @@ figure > img {
 
 @media (min-width: 767px) {
   .section.works a > img {
+    object-fit: cover;
     width: 180px;
     height: 130px;
   }
@@ -343,6 +352,7 @@ figure > img {
 
 @media (min-width: 960px) {
   .section.works a > img {
+    object-fit: cover;
     width: 220px;
     height: 180px;
   }
