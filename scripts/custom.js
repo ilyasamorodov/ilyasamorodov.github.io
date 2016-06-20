@@ -26,7 +26,7 @@ works.onclick = function(event) {
   return false;
 }
 
-function closeNav() {
+function closeModal() {
   image.src = '';
   document.body.style.overflowY = "scroll";
   document.getElementById("modal").style.width = "0%";
