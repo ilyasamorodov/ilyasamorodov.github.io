@@ -26,6 +26,8 @@
     if (today.getHours() > 8 && today.getHours() < 21)
     {
       rowMessage.style.display = 'none';
+      rowTimer.style.display = 'block';
+      
       today.setHours(21, 00, 00);
       var rest = getTimeRemaining(today);
 
