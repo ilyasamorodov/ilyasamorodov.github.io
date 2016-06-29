@@ -28,8 +28,11 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="stylesheets/normalize.css">
   <link rel="stylesheet" href="stylesheets/skeleton.css">
+  <link rel="stylesheet" href="stylesheets/custom.css">
+  <!--[if !(IE lt 9)]>
   <link rel="stylesheet" href="stylesheets/polyfill.object-fit.css">
-	<link rel="stylesheet" href="stylesheets/custom.css">
+  <![endif]-->
+
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/icons/favicon-16x16.png" sizes="16x16">
@@ -127,8 +130,7 @@
       <div class="row">
         <h3 class="section-subheading">Зачем я&nbsp;вам нужен</h3>
         <p>Помогу вам создать сайт с&nbsp;нуля или займусь поддержкой уже существующего. Сверстаю почтовую рассылку, промо-страницу или внесу необходимые изменения в&nbsp;имеющиеся по&nbsp;вашему ТЗ.</p>
-        <p>Также могу поддержать своей кандидатурой вашу команду разработчиков. Предложение можно оговорить,
-        <a href="#contacts" class="contacts-link">связавшись со&nbsp;мной</a> удобным для вас способом.</p>
+        <p>Также могу стать частью вашей команды разработчиков. Предложение <a href="#contacts" class="contacts-link">можно&nbsp;обсудить</a>.</p>
 			</div>
     </div>
 	</div>
@@ -223,7 +225,7 @@
 			<h2 class="section-heading inverse">Контакты</h2>
 	    <span class="inverse"><a href="mailto:ilyasamorodov@gmail.com">ilyasamorodov@gmail.com</a></span>
 	    <span class="inverse">ilyasamorodov в&nbsp;Skype (для сообщений)</span>
-	    <span class="inverse">Личный телефон&nbsp;+7 (915) 473-80-46 <br/> (звонить с&nbsp;12:00 до&nbsp;21:00)</span>
+	    <span class="inverse">Личный телефон&nbsp;<a href="tel:+79154738046">+7 915 473-80-46</a> <br/> (звонить с&nbsp;12:00 до&nbsp;21:00)</span>
 
 	    <ul class="contacts-badges inverse">
 	      <li><a href="https://vk.com/lassard" class="vkontakte-icon" title="Я Вконтакте"></a></li>
@@ -240,9 +242,9 @@
   <script src="scripts/timer.js" charset="utf-8"></script>
   <script src="scripts/custom.js" charset="utf-8"></script>
   <script src="scripts/polyfill.object-fit.min.js" charset="utf-8"></script>
-  <script>
-    objectFit.polyfill({selector: 'img',fittype: 'cover',disableCrossDomain: 'true'});
-  </script>
+  <!--[if IE]>
+  <script>objectFit.polyfill({selector: 'img',fittype: 'cover',disableCrossDomain: 'true'});</script>
+  <![endif]-->
 <!-- End Document
 ================================================== -->
 
