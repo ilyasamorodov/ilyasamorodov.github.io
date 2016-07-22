@@ -1,8 +1,3 @@
-;(function(){
-  console.log('custom ready');
-})();
-
-
 var works = document.getElementById('works');
 
 var modal = document.getElementById('modal');
